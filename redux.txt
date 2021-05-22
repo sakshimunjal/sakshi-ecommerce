@@ -1,0 +1,22 @@
+Redux is used to reduce complexity in an application. Managing state in a complex app is difficult, hence redux makes it easier to store the data.
+
+All the apps data is centralized in a single store. State in redux is READ ONLY. In a large app, a lot of components can change the state, making it difficult to debug.
+
+In Redux, the store contains the state, no component can directly change the state. They can emit an Action describing how it wants to update the state, making a strict order of changing state.
+
+All state changes in Redux happen at a single place, ROOT Reducer(pure function)
+
+For deeply nested components, without redux, it is very tedious to pass down the state to a level. Instead of passing data as props within app, redux gives us the ability to access data anywhere in the app
+we can inject the store anywhere we need. 
+
+The store is a centralized location, which maintains global state of an app.
+
+All of the apps data lives inside store and store's data is always populated or changed by Reducer and nothing else.
+whenever we need to update the state an action is dispatched by the store, that action goes to reducer which will determine (from action), how or what to change in state inside store.
+
+Reducer is a function which 1st param as state which will live inside store and 2nd param as action, on whose trigger state will be changed
+
+react-redux gives access to Provider, it efficiently passes props to nested components i.e. it gives the component the ability to receive the store directly. Provider provides the components with the store.
+
+connect is used to inject the props at any level. connect doesn't modify the component class passed into it, Instead it returns a new connected component that is connected to redux store.
+
